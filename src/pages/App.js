@@ -24,12 +24,21 @@ class App extends Component{
         e.preventDefault();
         let items= [...this.state.items]
 
+
+        if(this.state.fName==="" &&
+         this.state.lName==="" &&
+          this.state.Contact==="" && 
+          this.state.Remarks===""){
+
+
+        }else{
         items.push({
             fName:this.state.fName,
             lName:this.state.lName,
             Contact:this.state.Contact,
             Remarks:this.state.Remarks
         });
+    }
 
         this.setState({
             fName:'',
