@@ -1,3 +1,28 @@
+
+
+# --> CLass Based (40% slower) [We will do this ]
+# --> Functional () [IN functional ]
+
+
+   step 1.  npx create-react-app app-name
+
+    we will create three components
+    1. app.js
+    2. FOrm 
+    3. Table
+
+
+    form -> 
+        table
+
+        fName
+        lName
+        Contact
+        Remorks
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
