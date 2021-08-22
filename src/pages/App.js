@@ -1,7 +1,10 @@
 import React,{Component} from "react"
 import Form from "../Components/Form"
 import Table from "../Components/Table"
+import NavBar from "../Components/NavBar"
+import {Container} from "react-bootstrap"
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component{
     constructor(props){
@@ -105,6 +108,11 @@ class App extends Component{
     render(){
         return(
             <div>
+
+
+
+                <NavBar></NavBar>
+                <Container>
                 <Form 
                 handleFormSubmit={this.handleFormSubmit}
                 handleInputChange={this.handleInputChange}
@@ -114,6 +122,7 @@ class App extends Component{
                 nRemarks={this.state.Remarks}
                 ></Form>
                 <Table items={this.state.items}></Table>
+                </Container>
             </div>
         );
     }
