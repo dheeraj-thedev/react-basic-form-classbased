@@ -11,6 +11,8 @@
     2. FOrm 
     3. Table
 
+    whwenver you create any react app its the dev resposibility to test it by running the application 
+    
 
     form -> 
         table

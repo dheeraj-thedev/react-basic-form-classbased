@@ -6,7 +6,7 @@ class Table extends Component{
     render(){
         const items= this.props.items;
         let ctr=0
-        console.log(items)
+       // console.log(items)
         return(
             <div>
                 <table>
@@ -19,11 +19,10 @@ class Table extends Component{
                     <tbody>
                      
                     {
-                  
                     items.map(item=>{
                         ctr++;
                         return(
-                            <tr>
+                            <tr key={ctr}>
                                 <td>{ctr}</td>
                                 <td>{item.fName}</td>
                                 <td>{item.lName}</td>
