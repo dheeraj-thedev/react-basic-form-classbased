@@ -4,8 +4,9 @@ import React, {Component} from "react"
 
 import {Container,Navbar,Nav,NavDropdown} from "react-bootstrap"
 
-class NavBar extends Component{
-    render(){
+// class NavBar extends Component{
+    // render(){
+     const NavBar=()=>{
         return(<>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
@@ -34,6 +35,6 @@ class NavBar extends Component{
 </Navbar>
               </>)
         };
-}
+
 
 export default NavBar

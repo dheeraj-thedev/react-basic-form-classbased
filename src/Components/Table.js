@@ -2,9 +2,11 @@
 
 import React, { Component } from "react"
 
-class Table extends Component{
-    render(){
-        const items= this.props.items;
+//class Table extends Component{
+
+const Table =(props)=>{
+    // render(){
+        const items= props.items;
         let ctr=0
        // console.log(items)
         return(
@@ -38,6 +40,6 @@ class Table extends Component{
             </div>
         );
     }
-}
+
 
 export default Table

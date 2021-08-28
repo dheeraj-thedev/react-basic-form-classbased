@@ -36,6 +36,18 @@
       Render +props + states +event handeller 
 
 
+  # you should appreciate follofing points 
+    what is component 
+    class based vs functional 
+    what is state 
+    what is props
+    what is JSX
+    how to pass state between components 
+    how to pass props between components 
+    how to pass event handlered between components 
+
+
+
 
 
 # Getting Started with Create React App
