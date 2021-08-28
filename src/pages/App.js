@@ -6,6 +6,8 @@ import {Container} from "react-bootstrap"
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+
+// hooks -- faster in state class based 
 class App extends Component{
     constructor(props){
         super(props);

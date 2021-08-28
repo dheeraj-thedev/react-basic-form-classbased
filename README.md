@@ -25,6 +25,17 @@
 
 # 22-08-2021  Adding Bootstrap to the application
 
+    add bootstrap as a dependeny to the react application 
+      Command -   npm install react-bootstrap@next bootstrap@5.1.0
+
+
+# 28-08-2021 we will learn more about functional compoenets instead of class based 
+  1. JSX -> HTML (JSX)
+  2. CSS ->  any css file 
+  3. Component -> React componenet that will have its JSX ->
+      Render +props + states +event handeller 
+
+
 
 
 # Getting Started with Create React App
