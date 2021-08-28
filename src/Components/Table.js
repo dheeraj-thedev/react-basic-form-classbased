@@ -19,7 +19,7 @@ class Table extends Component{
                     <tbody>
                      
                     {
-                    items.map(item=>{
+                    items?.map(item=>{
                         ctr++;
                         return(
                             <tr key={ctr}>

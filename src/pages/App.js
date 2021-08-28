@@ -7,34 +7,28 @@ import {Container} from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-// hooks -- faster in state class based 
-class App extends Component{
-    constructor(props){
-        super(props);
 
-        this.state={
+const App =()=>{
+// problem starts from here --
+   const [state, setState ] = React.useState({
             fName:'',
             lName:'',
             Contact:'',
             Remarks:'',
             items:[]
-        }
+        });
 
-      this.handleFormSubmit = this.handleFormSubmit.bind(this);
-      
-      this.handleInputChange = this.handleInputChange.bind(this);
-    }
-
-    handleFormSubmit=(e)=>{
+    const handleFormSubmit=(e)=>{
         e.preventDefault();
-        let items= [...this.state.items]
+        console.log(state)
+        let items= [...state?.items]
 
-        if(this.state.fName==="" && this.state.lName==="" && this.state.Contact===""&& this.state.Remarks===""){
+        if(state.fName==="" && state.lName==="" && state.Contact===""&& state.Remarks===""){
             items.push({
-                fName:this.state.fName,
-                lName:this.state.lName,
-                Contact:this.state.Contact,
-                Remarks:this.state.Remarks
+                fName:state.fName,
+                lName:state.lName,
+                Contact:state.Contact,
+                Remarks:state.Remarks
             });
         }
         else{
@@ -50,38 +44,21 @@ class App extends Component{
             }
 
             if(isToBeInserted){
-                        items[blankAddressOfArray].fName=this.state.fName;
-                        items[blankAddressOfArray].lName=this.state.lName;
-                        items[blankAddressOfArray].Contact=this.state.Contact;
-                        items[blankAddressOfArray].Remarks=this.state.Remarks;
+                        items[blankAddressOfArray].fName=state.fName;
+                        items[blankAddressOfArray].lName=state.lName;
+                        items[blankAddressOfArray].Contact=state.Contact;
+                        items[blankAddressOfArray].Remarks=state.Remarks;
             }else{
                 items.push({
-                    fName:this.state.fName,
-                    lName:this.state.lName,
-                    Contact:this.state.Contact,
-                    Remarks:this.state.Remarks
+                    fName:state.fName,
+                    lName:state.lName,
+                    Contact:state.Contact,
+                    Remarks:state.Remarks
                 });
             }
         
-    }
-        
-        // iterate the array 
-
-        // need to extract first index that is empty 
-        // let indexCtr=0;
-        // items.forEach(item=>{
-        //    // console.log(item.fName+""+item.lName+""+item.Contact+""+item.Remarks);
-        //     if(item.fName==="" && item.lName==="" && item.Contact===""&& item.Remarks===""){
-        //             items[indexCtr].fName=this.state.fName;
-        //             items[indexCtr].lName=this.state.lName;
-        //             items[indexCtr].Contact=this.state.Contact;
-        //             items[indexCtr].Remarks=this.state.Remarks;
-        //     }
-
-        // });
-
-
-        this.setState({
+        }
+        setState({
             fName:'',
             lName:'',
             Contact:'',
@@ -92,42 +69,32 @@ class App extends Component{
        // console.log("The current state on form submit"+fName,lName,Contact,Remarks)
     }
 
-    handleInputChange=(e)=>{
+    const handleInputChange=(e)=>{
         let input= e.target;
         let name=e.target.name;
         let value = e.target.value;
-
-        this.setState({
+        setState(prevState=>({
+            ...prevState,
             [name]:value
-        })
+        }));
+   }
 
-       // let {fName,lName,Contact,Remarks}=this.state;
-        
-        //console.log("The current state on change of input"+fName,lName,Contact,Remarks)
-    }
-
-
-    render(){
         return(
             <div>
-
-
-
                 <NavBar></NavBar>
                 <Container>
                 <Form 
-                handleFormSubmit={this.handleFormSubmit}
-                handleInputChange={this.handleInputChange}
-                nFirstName={this.state.fName}
-                nLastName={this.state.lName}
-                nContact={this.state.Contact}
-                nRemarks={this.state.Remarks}
+                handleFormSubmit={handleFormSubmit}
+                handleInputChange={handleInputChange}
+                nFirstName={state.fName}
+                nLastName={state.lName}
+                nContact={state.Contact}
+                nRemarks={state.Remarks}
                 ></Form>
-                <Table items={this.state.items}></Table>
+                <Table items={state.items}></Table>
                 </Container>
             </div>
         );
-    }
 }
 
 
